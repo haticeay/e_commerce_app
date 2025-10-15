@@ -1,6 +1,7 @@
-# heraninda
 
-A new Flutter project.
+Bu case çalışması, bir iş mülakatı için yapılan bir değerlendirme sürecinde hazırlanmıştır.
+Gerçek bir proje senaryosuna dayanmakta olup; kullanıcı deneyimi, tasarım ve teknik çözüm üretme becerilerimi göstermek amacıyla oluşturulmuştur.
+Çalışmadaki içerikler tamamen kişisel yorum ve geliştirmelerimdir, şirketin resmi ürününü veya gizli verilerini temsil etmez.
 
 ## Getting Started
 
