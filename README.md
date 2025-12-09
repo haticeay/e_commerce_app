@@ -1,4 +1,4 @@
-# 🛒 E-Ticaret Uygulaması 
+# E-Ticaret Uygulaması 
 
 Bu proje, Clean Code prensipleri, modüler mimari ve modern bir durum yönetimi yaklaşımı (Riverpod) kullanılarak geliştirilmiş temel bir e-ticaret uygulamasıdır.  
 Odak noktam, uygulamanın **ölçeklenebilir**, **bakımı kolay** ve **mimari açıdan sağlam** bir yapıda olmasıdır.
