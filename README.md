@@ -1,17 +1,57 @@
+# 🛒 E-Ticaret Uygulaması (Heranında)
 
-Bu case çalışması, bir iş mülakatı için yapılan bir değerlendirme sürecinde hazırlanmıştır.
-Gerçek bir proje senaryosuna dayanmakta olup; kullanıcı deneyimi, tasarım ve teknik çözüm üretme becerilerimi göstermek amacıyla oluşturulmuştur.
-Çalışmadaki içerikler tamamen kişisel yorum ve geliştirmelerimdir, şirketin resmi ürününü veya gizli verilerini temsil etmez.
+Bu proje, Clean Code prensipleri, modüler mimari ve modern bir durum yönetimi yaklaşımı (Riverpod) kullanılarak geliştirilmiş temel bir e-ticaret uygulamasıdır.  
+Odak noktam, uygulamanın **ölçeklenebilir**, **bakımı kolay** ve **mimari açıdan sağlam** bir yapıda olmasıdır.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 1. Uygulanan Temel Özellikler
 
-A few resources to get you started if this is your first Flutter project:
+### ✅ 1.1. Kimlik Doğrulama ve Kullanıcı Yönetimi (Simülasyon)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Kayıt & Giriş Akışı:** Kullanıcıların giriş/kayıt işlemleri için UI ve akış tasarlandı.  
+- **Yerel Oturum Yönetimi:** Backend olmadığı için kullanıcı verileri `SharedPreferences` üzerinde saklanarak simüle edildi.  
+- **"Beni Hatırla" Özelliği:** Kullanıcının mail/şifre bilgilerinin hatırlanması sağlandı.  
+- **Sosyal Giriş Simülasyonu:** Google / Facebook / Apple giriş butonları arayüzde entegre edildi.  
+- **OTP Akışı:** Tek kullanımlık doğrulama kodu ekranı (Verification) tasarlandı.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+### 🛍️ 1.2. Ürün Yönetimi & Listeleme
+
+- **Mock Veriyle Ürün Listeleme:** Ürün listeleri `ProductService` üzerinden mock verilerle yönetildi.
+- **Kategori Bazlı Filtreleme:** Kategori çubuğundaki seçimlere göre liste dinamik olarak güncellenir.
+- **Arama Çubuğu:** Ürün listesinde arayüzsel arama alanı tasarlanmıştır.
+
+---
+
+### 🎨 1.3. Kullanıcı Arayüzü (UI/UX)
+
+- **Yeniden Kullanılabilir Bileşenler:**  
+  - `CustomTextField`  
+  - `CustomElevatedButton`  
+  - `CustomAppBar`  
+  gibi bileşenler **core/components** altında oluşturuldu.
+
+- **Tasarım Sabitleri:**  
+  - Renkler (`AppColor`)  
+  - Boşluklar (`AppSpace`)  
+  ayrı klasörlerde tanımlandı.
+
+- **Navigasyon Yönetimi:**  
+  `NavigatorManager` mixin’i ile sayfa yönlendirmeleri merkezi bir yapıda toplandı.
+
+---
+
+## 🧩 2. Teknik Yapı ve Mimari
+
+Bu projede modern ve esnek bir yapı kurmak için aşağıdaki mimari tercihleri uyguladım:
+
+### 🟦 **State Management → Riverpod**
+- Tüm iş mantığı UI’dan ayrıldı.
+- `StateNotifier` ve `StateProvider.family` gibi ileri seviye Riverpod yapıları kullanıldı.
+- Ürün filtreleme ve UI güncellemeleri tamamen Riverpod üzerinden yönetilir.
+
+### 🏛️ **Mimari Katmanlama**
+Proje aşağıdaki katmanlara bölünmüştür:
+
