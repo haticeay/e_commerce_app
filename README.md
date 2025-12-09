@@ -82,11 +82,11 @@ Gerçek bir projede:
 | Ekran | Açıklama | Görsel |
 |------|----------|--------|
 | **Splash** | Splash sayfası | <img src="assets/app_ss/splash.png" width="200"/> |
-| **Giriş** | Özelleştirilmiş TextField ve butonlarla giriş akışı | <img src="assets/app_ss/login.png" width="200"/> |
-| **Kayıt** | Kullanıcı kayıt formu ve sosyal giriş seçenekleri | <img src="assets/app_ss/signup.png" width="200"/> |
-| **Ana Sayfa** | Kategori filtreleme ve ürün kartları listesi | <img src="assets/app_ss/home.png" width="200"/> |
 | **Welcome** | Kullanıcı karşılama ekranı | <img src="assets/app_ss/welcome.png" width="200"/> |
+| **Kayıt** | Kullanıcı kayıt formu ve sosyal giriş seçenekleri | <img src="assets/app_ss/signup.png" width="200"/> |
+| **Giriş** | Özelleştirilmiş TextField ve butonlarla giriş akışı | <img src="assets/app_ss/login.png" width="200"/> |
 | **Doğrulama** | Tek kullanımlık şifre doğrulama akışı | <img src="assets/app_ss/verification.png" width="200"/> |
+| **Ana Sayfa** | Kategori filtreleme ve ürün kartları listesi | <img src="assets/app_ss/home.png" width="200"/> |
 
 ---
 
