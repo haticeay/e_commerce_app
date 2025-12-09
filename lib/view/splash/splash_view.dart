@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heraninda/assets.dart';
+import 'package:heraninda/core/constants/app_color.dart';
+import 'package:heraninda/core/constants/app_text_style.dart';
 import 'dart:async';
 
 import 'package:heraninda/view/welcome/welcome_view.dart';
@@ -15,7 +18,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Belirli bir süre sonra ana ekrana geçiş yap
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -29,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(205, 214, 245, 1),
       body: Center(
-        child: Image.asset(Assets.image.imLogoPNG)
+        child: Text("Vionza", style: AppTextStyle.instrumentSansBold(context).copyWith(color: AppColor.primaryColor, fontSize: 44.sp) ),
       ),
     );
   }

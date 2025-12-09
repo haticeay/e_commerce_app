@@ -15,4 +15,10 @@ class AppTextStyle {
     fontSize: 18,
     color: AppColor.defaultTextColor
   );
+  static TextStyle instrumentSansBold(context) => GoogleFonts.instrumentSans(
+    
+    fontWeight: FontWeight.w700,
+    fontSize: 20,
+    color: AppColor.defaultTextColor
+  );
 }

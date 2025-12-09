@@ -65,7 +65,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
           ),
           Expanded(
             child: GridView.builder(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(16.0),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.7,

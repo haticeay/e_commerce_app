@@ -8,7 +8,7 @@ import 'package:heraninda/core/components/custom_text_field.dart';
 import 'package:heraninda/core/constants/app_color.dart';
 import 'package:heraninda/core/constants/app_padding.dart';
 import 'package:heraninda/core/constants/app_space.dart';
-import 'package:heraninda/core/constants/app_strings.dart'; 
+import 'package:heraninda/core/constants/app_strings.dart';
 import 'package:heraninda/core/constants/app_text_style.dart';
 import 'package:heraninda/core/navigator_manager.dart';
 import 'package:heraninda/core/service/signup_service.dart';
@@ -54,19 +54,31 @@ class _LoginViewState extends ConsumerState<LoginView> {
 
     final matchedUser = userList.firstWhere(
       (user) => user.email == email && user.password == password,
-      orElse: () => User(name: '', email: '', password: '', id: '', confirmPassword: ''),
+      orElse:
+          () => User(
+            name: '',
+            email: '',
+            password: '',
+            id: '',
+            confirmPassword: '',
+          ),
     );
 
     if (matchedUser.email.isNotEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text(AppStrings.loginSuccess)),
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text(AppStrings.loginSuccess)));
+      saveRememberMeInfo(
+        ref,
+        rememberMe,
+        rememberMe ? email : null,
+        rememberMe ? password : null,
       );
-      saveRememberMeInfo(ref, rememberMe, rememberMe ? email : null, rememberMe ? password : null);
       widget.navigateToPushWidget(context, const VerificationView());
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text(AppStrings.loginFailed)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text(AppStrings.loginFailed)));
     }
   }
 
@@ -84,13 +96,19 @@ class _LoginViewState extends ConsumerState<LoginView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                
                 Image.asset(Assets.image.imLoginPNG),
                 AppSpace.vertical.space24,
-                Text(AppStrings.loginTitle, style: AppTextStyle.instrumentSansMedium(context)),
+                Text(
+                  AppStrings.loginTitle,
+                  style: AppTextStyle.instrumentSansMedium(context),
+                ),
                 AppSpace.vertical.space8,
                 Text(
                   AppStrings.loginSubtitle,
-                  style: AppTextStyle.instrumentSansRegular(context).copyWith(fontSize: 16),
+                  style: AppTextStyle.instrumentSansRegular(
+                    context,
+                  ).copyWith(fontSize: 16),
                 ),
                 AppSpace.vertical.space40,
                 CustomTextField(
@@ -113,14 +131,17 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     RememberMeCheckbox(
                       value: rememberMe,
                       onChanged: (value) {
-                        ref.read(rememberMeProvider.notifier).state = value ?? false;
+                        ref.read(rememberMeProvider.notifier).state =
+                            value ?? false;
                       },
                     ),
                     TextButton(
                       onPressed: () {},
                       child: Text(
                         AppStrings.forgetPassword,
-                        style: AppTextStyle.instrumentSansRegular(context).copyWith(
+                        style: AppTextStyle.instrumentSansRegular(
+                          context,
+                        ).copyWith(
                           color: AppColor.primaryColor,
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
@@ -134,9 +155,9 @@ class _LoginViewState extends ConsumerState<LoginView> {
                   onPressed: _login,
                   child: Text(
                     AppStrings.loginButton,
-                    style: AppTextStyle.instrumentSansMedium(context).copyWith(
-                      color: AppColor.appWhiteColor,
-                    ),
+                    style: AppTextStyle.instrumentSansMedium(
+                      context,
+                    ).copyWith(color: AppColor.appWhiteColor),
                   ),
                 ),
                 AppSpace.vertical.space16,
@@ -151,8 +172,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     widget.navigateToPushWidget(context, const SignupView());
                   },
                 ),
-                                                AppSpace.vertical.space30,
-
+                AppSpace.vertical.space30,
               ],
             ),
           ),

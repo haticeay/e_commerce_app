@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:heraninda/assets.dart';
 import 'package:heraninda/core/components/custom_elevated_button.dart';
 import 'package:heraninda/core/components/custom_outlined_button.dart';
@@ -26,10 +27,16 @@ class WelcomeView extends StatelessWidget with NavigatorManager {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AppSpace.vertical.space35,
+                AppSpace.vertical.space40,
                 Image.asset(Assets.image.imWelcomePNG),
                 AppSpace.vertical.space55,
-                Image.asset(Assets.image.imTitlePNG),
+                Text(
+                  AppStrings.appName,
+                  style: AppTextStyle.instrumentSansBold(
+                    context,
+                  ).copyWith(fontSize: 34.sp, color: AppColor.primaryColor),
+                ),
+
                 AppSpace.vertical.space20,
                 Text(
                   AppStrings.welcomeSubtitle,

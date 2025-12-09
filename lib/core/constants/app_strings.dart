@@ -1,4 +1,5 @@
 class AppStrings {
+  static const String appName = "Vionza";
   static const String loginTitle = "Log In";
   static const String loginSubtitle = "Hi! welcome back, you’ve been missed";
   static const String emailHint = "Enter your email";
